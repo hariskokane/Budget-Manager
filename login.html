@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • Budget Manager</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body class="centered" style="position: relative; overflow: hidden;">
+    <!-- Decorative background elements -->
+    <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: linear-gradient(135deg, var(--primary), var(--primary-600)); border-radius: 50%; filter: blur(80px); opacity: 0.5; z-index: -1;"></div>
+    <div style="position: absolute; bottom: -150px; right: -50px; width: 400px; height: 400px; background: linear-gradient(135deg, var(--success), var(--primary)); border-radius: 50%; filter: blur(100px); opacity: 0.4; z-index: -1;"></div>
+    
+    <main class="auth-container" style="z-index: 1;">
+      <section class="card auth-card" style="padding: 40px;">
+        <div class="logo" style="width: 64px; height: 64px; font-size: 36px; margin-bottom: 24px; box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);">₹</div>
+        <h1 style="font-weight: 800; font-size: 28px; letter-spacing: -0.5px;">Welcome back</h1>
+        <p class="muted">Log in to continue</p>
+        <form id="loginForm" class="form">
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" minlength="6" required placeholder="••••••••" />
+          </div>
+          <button type="submit" class="btn primary full">Login</button>
+        </form>
+        <div class="auth-alt">
+          <span class="muted">New here?</span>
+          <a href="signup.html" class="btn link">Create an account</a>
+        </div>
+        <div class="auth-alt" style="margin-top:4px;">
+          <button id="showForgot" class="btn link" style="font-size:13px;color:var(--muted);">Forgot password?</button>
+        </div>
+        <div id="forgotSection" style="display:none;margin-top:12px;">
+          <div class="form-row">
+            <label for="forgotEmail">Enter your email to reset password</label>
+            <input id="forgotEmail" type="email" placeholder="you@example.com" />
+          </div>
+          <button id="sendReset" class="btn primary full" style="margin-top:8px;">Send Reset Link</button>
+          <p id="forgotMsg" style="margin-top:8px;font-size:13px;color:var(--success);min-height:18px;"></p>
+        </div>
+        <p id="loginError" class="error" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+  </html>
+
+

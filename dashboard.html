@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard • Budget Manager</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand"><span class="logo">₹</span> Budget Manager</div>
+        <nav class="side-nav">
+          <button id="navOverview"      class="btn ghost full">🏠 Dashboard</button>
+          <button id="navTransactions"  class="btn ghost full">💸 Transactions</button>
+          <button id="navDaily"         class="btn ghost full">📅 By Date</button>
+          <button id="navBudgets"       class="btn ghost full">🎯 Budgets</button>
+          <button id="navGoals"         class="btn ghost full">⭐ Savings Goals</button>
+          <button id="navRecurring"     class="btn ghost full">🔁 Recurring</button>
+          <button id="navReports"       class="btn ghost full">📊 Reports</button>
+          <button id="navProfile"       class="btn ghost full">👤 My Profile</button>
+        </nav>
+        <div class="sidebar-footer">
+          <button id="sidebarThemeToggle" class="btn ghost full" title="Toggle dark mode">🌙 Dark Mode</button>
+          <button id="navLogout" class="btn danger full">Logout</button>
+        </div>
+      </aside>
+      <div class="content">
+        <header class="app-header">
+          <button id="openSidebar" class="hamburger" aria-label="Open menu">☰</button>
+          <div class="app-title"><span class="logo">₹</span> Budget Manager</div>
+          <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">🌙</button>
+        </header>
+        <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+        <main class="container" id="viewContainer">
+          <!-- Views injected by JS -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Bottom mobile navigation -->
+    <nav class="bottom-nav" aria-label="Mobile navigation">
+      <div class="bottom-nav-items">
+        <button class="bottom-nav-btn" data-nav="navOverview">
+          <span class="nav-icon">🏠</span>Home
+        </button>
+        <button class="bottom-nav-btn" data-nav="navTransactions">
+          <span class="nav-icon">💸</span>Txns
+        </button>
+        <button class="bottom-nav-btn" data-nav="navBudgets">
+          <span class="nav-icon">🎯</span>Budgets
+        </button>
+        <button class="bottom-nav-btn" data-nav="navGoals">
+          <span class="nav-icon">⭐</span>Goals
+        </button>
+        <button class="bottom-nav-btn" data-nav="navRecurring">
+          <span class="nav-icon">🔁</span>Repeat
+        </button>
+        <button class="bottom-nav-btn" data-nav="navReports">
+          <span class="nav-icon">📊</span>Reports
+        </button>
+      </div>
+    </nav>
+
+    <!-- Toast container -->
+    <div id="toastContainer"></div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+  </html>

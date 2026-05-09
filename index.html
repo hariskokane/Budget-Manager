@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Manager</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body class="centered">
+    <div class="card">
+      <div class="logo">₹</div>
+      <h1>Budget Manager</h1>
+      <p>Loading...</p>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/storage.js"></script>
+    <script>
+      (async function () {
+        const session = await BMStorage.getActiveSession();
+        if (session) {
+          window.location.replace('dashboard.html');
+        } else {
+          window.location.replace('login.html');
+        }
+      })();
+    </script>
+  </body>
+  </html>
+
+
