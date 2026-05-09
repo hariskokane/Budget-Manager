@@ -1337,7 +1337,7 @@
               <div><label>Gender</label>
                 <select id="pGender">
                   <option value="">Select</option>
-                  ${['Female','Male','Non-binary','Prefer not to say'].map(v =>
+                  ${['Male','Female'].map(v =>
                     `<option ${activeUser.gender===v?'selected':''}>${v}</option>`).join('')}
                 </select>
               </div>
