@@ -65,6 +65,11 @@ body {
 .muted { color: var(--muted); }
 .error { color: var(--danger); min-height: 20px; }
 
+.pwd-wrap { position: relative; display: flex; align-items: center; }
+.pwd-wrap input { width: 100%; padding-right: 40px; }
+.pwd-toggle { position: absolute; right: 8px; background: none; border: none; font-size: 16px; color: #94a3b8; cursor: pointer; padding: 4px; border-radius: 4px; display: grid; place-items: center; }
+.pwd-toggle:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+
 .form { display: grid; gap: 16px; margin-top: 16px; }
 .form-row { display: grid; gap: 8px; }
 .form-row.two-col { grid-template-columns: 1fr 1fr; gap: 16px; }
