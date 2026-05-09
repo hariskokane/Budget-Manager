@@ -24,7 +24,10 @@
           </div>
           <div class="form-row">
             <label for="password">Password</label>
-            <input id="password" name="password" type="password" minlength="6" required placeholder="••••••••" />
+            <div class="pwd-wrap">
+              <input id="password" name="password" type="password" minlength="6" required placeholder="••••••••" />
+              <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁️</button>
+            </div>
           </div>
           <button type="submit" class="btn primary full">Login</button>
         </form>
