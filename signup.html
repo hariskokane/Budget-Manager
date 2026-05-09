@@ -29,11 +29,17 @@
           <div class="form-row two-col">
             <div>
               <label for="password">Password</label>
-              <input id="password" name="password" type="password" minlength="6" required placeholder="At least 6 characters" />
+              <div class="pwd-wrap">
+                <input id="password" name="password" type="password" minlength="6" required placeholder="At least 6 characters" />
+                <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁️</button>
+              </div>
             </div>
             <div>
               <label for="confirmPassword">Confirm Password</label>
-              <input id="confirmPassword" name="confirmPassword" type="password" minlength="6" required placeholder="Re-enter password" />
+              <div class="pwd-wrap">
+                <input id="confirmPassword" name="confirmPassword" type="password" minlength="6" required placeholder="Re-enter password" />
+                <button type="button" class="pwd-toggle" aria-label="Toggle password visibility">👁️</button>
+              </div>
             </div>
           </div>
           <div class="form-row two-col">
