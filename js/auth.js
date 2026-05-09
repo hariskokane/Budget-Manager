@@ -44,6 +44,9 @@
       const email    = String(form.email.value).trim().toLowerCase();
       const password = String(form.password.value);
 
+      // Clear any existing session first
+      await sb.auth.signOut();
+
       const { error } = await sb.auth.signInWithPassword({ email, password });
 
       if (error) {
@@ -78,7 +81,10 @@
       btn.disabled    = true;
       btn.textContent = 'Creating account…';
 
-      // 1. Create auth user
+      // 1. Clear any existing session (fixes issue where previous user stays logged in)
+      await sb.auth.signOut();
+
+      // 2. Create auth user
       const { data: authData, error: authError } = await sb.auth.signUp({ email, password });
       if (authError) {
         errorEl.textContent = authError.message || 'Sign-up failed. Try again.';
