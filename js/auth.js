@@ -3,6 +3,20 @@
   const isLogin  = document.getElementById('loginForm')  != null;
   const isSignup = document.getElementById('signupForm') != null;
 
+  // ── Password Toggle ────────────────────────────────────────────────────────
+  document.querySelectorAll('.pwd-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.previousElementSibling;
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = '🔒';
+      } else {
+        input.type = 'password';
+        btn.textContent = '👁️';
+      }
+    });
+  });
+
   // ── Forgot password ──────────────────────────────────────────────────────
   const showForgotBtn = document.getElementById('showForgot');
   if (showForgotBtn) {
