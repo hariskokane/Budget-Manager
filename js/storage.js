@@ -64,7 +64,7 @@ window.BMStorage = (function () {
 
   // Returns cached data synchronously – call initUserData first
   function getUserData() {
-    return _cache;
+    return _cache ? JSON.parse(JSON.stringify(_cache)) : null;
   }
 
   // Updates cache immediately; syncs to Supabase in background
