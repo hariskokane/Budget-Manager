@@ -8,18 +8,25 @@ window.BMUtils = (function () {
     return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
   }
 
+  function toLocalISOString(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
   function todayISO() {
-    return new Date().toISOString().slice(0, 10);
+    return toLocalISOString(new Date());
   }
 
   function startOfMonthISO(date = new Date()) {
     const d = new Date(date.getFullYear(), date.getMonth(), 1);
-    return d.toISOString().slice(0, 10);
+    return toLocalISOString(d);
   }
 
   function endOfMonthISO(date = new Date()) {
     const d = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    return d.toISOString().slice(0, 10);
+    return toLocalISOString(d);
   }
 
   function parseNumber(value) {
